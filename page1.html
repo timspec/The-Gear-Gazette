@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Gear Gazette — Page 1 | Panimalar Engineering College</title>
+  <style>
+    :root {
+      --navy: #14284b;
+      --red: #b3261e;
+      --paper: #efe9d6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100%;
+      max-width: 1700px;
+      margin: 0 auto;
+      background: #dfd8c2;
+      color: #1c1a17;
+      font-family: "Times New Roman", "Liberation Serif", Georgia, serif;
+      padding: 24px 56px 40px;
+    }
+
+    .paper {
+      border: 3px double var(--navy);
+      padding: 0 0 22px;
+      background: var(--paper);
+      box-shadow: 0 0 0 6px #dfd8c2, 0 0 0 8px var(--navy);
+      position: relative;
+    }
+
+    .collegehead {
+      padding: 22px 40px 14px;
+      text-align: center;
+    }
+
+    .chrow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo-slot {
+      width: 150px;
+      height: 150px;
+      border: 2px dashed #8a8368;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 150px;
+    }
+
+    .logo-slot.badge {
+      border-radius: 14px;
+    }
+
+    .logo-slot:has(img) {
+      border: none;
+      background: none;
+    }
+
+    .logo-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .chmid {
+      flex: 1;
+    }
+
+    .collegename {
+      font-family: "Liberation Sans", Arial, sans-serif;
+      font-weight: 800;
+      font-size: 44px;
+      color: var(--navy);
+      letter-spacing: .5px;
+      line-height: 1.15;
+    }
+
+    .autoinst {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-family: "Liberation Sans", Arial, sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 4px 16px;
+      margin: 8px 0 10px;
+      letter-spacing: .5px;
+      border-radius: 2px;
+    }
+
+    .affil {
+      font-size: 15px;
+      color: var(--navy);
+      line-height: 1.5;
+    }
+
+    .affil .italic {
+      font-style: italic;
+    }
+
+    .deptline {
+      margin-top: 16px;
+      border-top: 2px solid var(--navy);
+      padding-top: 12px;
+      font-family: "Liberation Sans", Arial, sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--navy);
+      letter-spacing: .3px;
+    }
+
+    .through {
+      font-style: italic;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--navy);
+      margin-top: 4px;
+    }
+
+    .clubrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .clubname {
+      font-family: "Liberation Sans", Arial, sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--navy);
+      letter-spacing: .5px;
+    }
+
+    .mast {
+      font-family: Georgia, "Liberation Serif", serif;
+      font-weight: 700;
+      font-size: 80px;
+      text-align: center;
+      color: var(--navy);
+      text-shadow: 2px 2px 0 #e3b9b4;
+      letter-spacing: -1px;
+      padding: 6px 0 4px;
+    }
+
+    .body-inner {
+      padding: 0 34px;
+    }
+
+    .sub {
+      border-top: 4px double var(--red);
+      border-bottom: 2px solid var(--navy);
+      padding: 6px 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 15px;
+      margin-bottom: 22px;
+      color: var(--navy);
+      gap: 8px;
+    }
+
+    .sub b {
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      align-items: start;
+    }
+
+    .story {
+      padding: 0 20px;
+      border-right: 1px solid #c8c2ac;
+    }
+
+    .story:first-child {
+      padding-left: 0;
+    }
+
+    .story.last {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .lead {
+      grid-column: span 2;
+    }
+
+    .section {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      font-family: "Liberation Sans", sans-serif;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--c);
+      padding: 3px 8px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-family: Georgia, "Liberation Serif", serif;
+      font-weight: 700;
+      font-size: 44px;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      letter-spacing: -.5px;
+      color: var(--navy);
+    }
+
+    h2 {
+      font-family: Georgia, "Liberation Serif", serif;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 1.15;
+      margin-bottom: 6px;
+      letter-spacing: -.3px;
+      color: var(--navy);
+    }
+
+    .deck {
+      font-style: italic;
+      font-size: 18px;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .by {
+      font-size: 13px;
+      font-style: italic;
+      margin-bottom: 8px;
+      border-top: 2px solid var(--c);
+      border-bottom: 1px solid var(--c);
+      padding: 2px 0;
+      color: var(--c);
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.42;
+      text-align: justify;
+      hyphens: auto;
+      margin-bottom: 8px;
+    }
+
+    .cols2 {
+      column-count: 2;
+      column-gap: 24px;
+      column-rule: 1px solid var(--navy);
+    }
+
+    .cols2 p:first-child::first-letter {
+      font-family: Georgia, serif;
+      font-weight: 700;
+      float: left;
+      font-size: 56px;
+      line-height: .85;
+      padding: 4px 6px 0 0;
+      color: var(--c);
+    }
+
+    .learn {
+      border: 2px solid var(--c);
+      padding: 10px 12px 4px;
+      margin: 10px 0 6px;
+      background: color-mix(in srgb, var(--c) 10%, var(--paper));
+    }
+
+    .learn .t {
+      font-family: "Liberation Sans", sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      border-bottom: 1px solid var(--c);
+      margin-bottom: 6px;
+      padding-bottom: 2px;
+      color: var(--c);
+    }
+
+    .learn p {
+      font-size: 15px;
+      margin-bottom: 6px;
+      text-align: left;
+    }
+
+    .fig {
+      margin: 8px 0 10px;
+      border: 2px solid var(--c);
+      background: #e3ded0;
+    }
+
+    .fig .frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .fig .frame.wide {
+      aspect-ratio: 16/6;
+    }
+
+    .fig img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .fig figcaption {
+      font-size: 12px;
+      font-style: italic;
+      padding: 3px 6px;
+      border-top: 1px solid var(--c);
+      background: color-mix(in srgb, var(--c) 8%, var(--paper));
+    }
+
+    .page-footer {
+      margin-top: 14px;
+      border-top: 2px solid var(--navy);
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "Liberation Sans", Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .6px;
+      color: var(--navy);
+      text-transform: uppercase;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .page-btn-link {
+      color: var(--red);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 6px 14px;
+      border: 1.5px solid var(--red);
+      border-radius: 4px;
+      background: color-mix(in srgb, var(--red) 10%, #fff);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .page-btn-link:hover {
+      background: var(--red);
+      color: #fff;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1200px) {
+      body {
+        padding: 18px 24px 30px;
+      }
+      .collegename {
+        font-size: 32px;
+      }
+      .logo-slot {
+        width: 110px;
+        height: 110px;
+        flex: 0 0 110px;
+      }
+      .mast {
+        font-size: 60px;
+      }
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .story {
+        padding: 0;
+        border-right: none;
+        border-bottom: 1px solid #c8c2ac;
+        padding-bottom: 16px;
+      }
+      .story.lead {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10px 10px 24px;
+      }
+      .paper {
+        box-shadow: 0 0 0 3px #dfd8c2, 0 0 0 5px var(--navy);
+        padding: 0 0 16px;
+      }
+      .collegehead {
+        padding: 14px 10px 8px;
+      }
+      .chrow {
+        gap: 8px;
+      }
+      .logo-slot {
+        width: 60px;
+        height: 60px;
+        flex: 0 0 60px;
+      }
+      .collegename {
+        font-size: 18px;
+        line-height: 1.15;
+      }
+      .autoinst {
+        font-size: 11px;
+        padding: 2px 8px;
+      }
+      .affil {
+        font-size: 10.5px;
+      }
+      .deptline {
+        font-size: 13px;
+        margin-top: 10px;
+        padding-top: 8px;
+      }
+      .mast {
+        font-size: 38px;
+      }
+      .body-inner {
+        padding: 0 12px;
+      }
+      .sub {
+        flex-direction: column;
+        text-align: center;
+        gap: 4px;
+        font-size: 12px;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .story {
+        padding: 16px 0;
+        border-right: none;
+        border-bottom: 1.5px solid #c8c2ac;
+      }
+      .story.lead {
+        grid-column: span 1;
+      }
+      h1 {
+        font-size: 26px;
+      }
+      h2 {
+        font-size: 21px;
+      }
+      .cols2 {
+        column-count: 1;
+      }
+      p {
+        font-size: 15px;
+        text-align: left;
+      }
+      .page-footer {
+        flex-direction: column;
+        text-align: center;
+      }
+      .page-btn-link {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media print {
+      body {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .paper {
+        box-shadow: none !important;
+        border: 3px double var(--navy) !important;
+      }
+      .grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+      }
+      .story.lead {
+        grid-column: span 2 !important;
+      }
+      .cols2 {
+        column-count: 2 !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="paper">
+    <div class="collegehead">
+      <!-- College Banner matching the supplied image -->
+      <div class="chrow">
+        <div class="logo-slot badge">
+          <img src="images/panimalarlogo.png" alt="Panimalar Engineering College Logo">
+        </div>
+        <div class="chmid">
+          <div class="collegename">PANIMALAR ENGINEERING COLLEGE</div>
+          <div class="autoinst">An Autonomous Institution</div>
+          <div class="affil">
+            Affiliated to AICTE, New Delhi, Accredited by National Board of Accreditation (NBA)<br>
+            Affiliated to Anna University, Chennai<br>
+            <span class="italic">(JAISAKTHI EDUCATIONAL TRUST)</span><br>
+            <span class="italic">Bangalore Trunk Road, Varadharajapuram, Poonamallee, Chennai &ndash; 600 123.</span>
+          </div>
+        </div>
+        <div class="logo-slot">
+          <img src="images/26.png" alt="26 Years of Excellence">
+        </div>
+      </div>
+
+      <div class="deptline">DEPARTMENT OF ELECTRONICS AND COMMUNICATION ENGINEERING</div>
+      <div class="through">ASSOCIATED WITH</div>
+      <div class="clubrow">
+        <figure class="fig" style="background:transparent; border:none; display:inline-block;">
+          <div class="frame wide" style="background:transparent; border:none;"><img src="images/club.png" alt="club logo"></div>
+          <b class="clubname">ROBOBOUT CLUB</b>
+        </figure>
+      </div>
+      <div class="through">PRESENTS</div>
+      <div class="mast">The Gear Gazette</div>
+    </div>
+
+    <div class="body-inner">
+      <div class="sub">
+        <span><b>Saturday, September 26, 2026</b></span>
+        <span><b>Coverage: September 19 to September 25, 2026</b></span>
+        <span><b>Front Page &bull; Issue 01 (Page 1 of 2)</b></span>
+      </div>
+
+      <div class="grid">
+        <!-- STORY 1 (LEAD) -->
+        <div class="story lead" style="--c:#b3261e">
+          <div class="section">Robotic Perception</div>
+          <h1>Cognex to Acquire RealSense for $500 Million, Pushing Into Robot Vision</h1>
+          <div class="deck">The Israeli-founded, Intel-spun depth-camera maker joins a machine-vision giant as robots
+            need to see in 3D.</div>
+          <div class="by">Sept. 22, 2026 &middot; Cognex &amp; RealSense press release</div>
+          <figure class="fig">
+            <div class="frame wide"><img src="images/1.jpg" alt="RealSense and Cognex management"></div>
+            <figcaption>Photo: RealSense and Cognex management.</figcaption>
+          </figure>
+          <div class="cols2">
+            <p>Cognex Corporation, a machine-vision company, has agreed to acquire RealSense for about $500 million in
+              cash. RealSense makes depth-sensing cameras that let robots judge distance and shape in three dimensions,
+              and its technology already supports robot arms, mobile robots, four-legged robots and humanoids.</p>
+            <p>RealSense was founded inside Intel in 2014 and spun out as an independent company only in 2025. Cognex
+              says RealSense's revenue is set to grow more than 50 percent this year, and it values the
+              robotic-perception market the deal opens up at about $600 million today, growing toward $1.6 billion by
+              2030.</p>
+            <p>The deal is expected to close in the fourth quarter of 2026. Before then, RealSense will spin off its
+              separate facial-authentication product line so the remaining business can focus only on robotic
+              perception.</p>
+          </div>
+          <div class="learn">
+            <div class="t">Learn: 2D vision vs. depth sensing</div>
+            <p>Ordinary machine vision reads a flat, 2D image, good for reading labels or checking a part's shape. A
+              <b>depth camera</b> adds a third dimension, distance, so a robot can tell how far away an object is and
+              navigate around it. This is essential for a robot that moves through open space rather than staying bolted
+              to one spot on a line.</p>
+          </div>
+        </div>
+
+        <!-- STORY 2 -->
+        <div class="story" style="--c:#1f5fa8">
+          <div class="section">Robotics + Electronics</div>
+          <h2>Qualcomm to Buy PickNik, Bringing Robotics Software to Arduino Boards</h2>
+          <div class="by">Sept. 23, 2026 &middot; ROSCon, Toronto</div>
+          <figure class="fig">
+            <div class="frame"><img src="images/2.png" alt="Qualcomm Dragonwing EVK"></div>
+            <figcaption>Photo: Qualcomm Dragonwing robotics evaluation kit.</figcaption>
+          </figure>
+          <p>Qualcomm has agreed to acquire PickNik Robotics, the company that maintains MoveIt, a widely used
+            open-source robot manipulation framework. Qualcomm says MoveIt will stay open-source and will gain closer
+            support on its Dragonwing robotics chips.</p>
+          <p>The first move into Arduino hardware is the Arduino VENTUNO Q board, which is built on Qualcomm's
+            Dragonwing IQ-8275 processor and pairs an AI chip rated at up to 40 TOPS with a real-time microcontroller.
+            That combination lets one board handle both AI perception and precise, time-critical motor control.</p>
+          <div class="learn">
+            <div class="t">Learn: what is MoveIt, and what is a TOPS?</div>
+            <p><b>MoveIt</b> is software that plans how a robot arm should move without hitting itself or its
+              surroundings, built on ROS (Robot Operating System), the standard toolkit most robotics students already
+              use. <b>TOPS</b> (trillion operations per second) measures how fast an AI chip can compute; more TOPS
+              means the chip can run bigger perception models on the robot itself, instead of sending data to a distant
+              server.</p>
+          </div>
+        </div>
+
+        <!-- STORY 3 -->
+        <div class="story last" style="--c:#2d7a4b">
+          <div class="section">Open-Source Robotics</div>
+          <h2>NVIDIA Launches Isaac ROS 5.0 With AI "Agent Skills"</h2>
+          <div class="by">Sept. 21&ndash;22, 2026 &middot; ROSCon, Toronto</div>
+          <figure class="fig">
+            <div class="frame"><img src="images/3.jpg" alt="NVIDIA Jetson Orin running Isaac ROS"></div>
+            <figcaption>Photo: NVIDIA Jetson Orin running Isaac ROS.</figcaption>
+          </figure>
+          <p>NVIDIA released Isaac ROS 5.0, a free, GPU-accelerated add-on to ROS that NVIDIA says reaches nearly 1.3
+            million ROS users. The new version adds "agent skills," reusable step-by-step routines that an AI coding
+            assistant can follow to set up perception or a pick-and-place task, instead of a person writing that setup
+            code by hand.</p>
+          <p>It also moves onto the newest long-term-support version of ROS 2 and adds a way to share GPU memory more
+            efficiently between different parts of a robot's software.</p>
+          <div class="learn">
+            <div class="t">Learn: what is ROS?</div>
+            <p>ROS is not an operating system in the Windows or Linux sense; it is a common set of tools and libraries
+              that let different parts of a robot, cameras, arms, wheels, planning software, talk to each other in a
+              standard way. Almost every robotics lab and most student robotics projects build on it, which is why a
+              free upgrade like this reaches so many developers at once.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span>PANIMALAR ENGINEERING COLLEGE &mdash; DEPARTMENT OF ECE</span>
+        <span>THE GEAR GAZETTE &bull; ISSUE 01</span>
+        <span>PAGE 1 OF 2 &mdash; <a href="page2.html" class="page-btn-link">CONTINUED ON PAGE 2 &rarr;</a></span>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

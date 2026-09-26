@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Gear Gazette — Page 2 | Panimalar Engineering College</title>
+  <style>
+    :root {
+      --navy: #14284b;
+      --red: #b3261e;
+      --paper: #efe9d6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100%;
+      max-width: 1700px;
+      margin: 0 auto;
+      background: #dfd8c2;
+      color: #1c1a17;
+      font-family: "Times New Roman", "Liberation Serif", Georgia, serif;
+      padding: 24px 56px 40px;
+    }
+
+    .paper {
+      border: 3px double var(--navy);
+      padding: 0 0 22px;
+      background: var(--paper);
+      box-shadow: 0 0 0 6px #dfd8c2, 0 0 0 8px var(--navy);
+      position: relative;
+    }
+
+    .collegehead {
+      padding: 22px 40px 14px;
+      text-align: center;
+    }
+
+    .chrow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo-slot {
+      width: 150px;
+      height: 150px;
+      border: 2px dashed #8a8368;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 150px;
+    }
+
+    .logo-slot.badge {
+      border-radius: 14px;
+    }
+
+    .logo-slot:has(img) {
+      border: none;
+      background: none;
+    }
+
+    .logo-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .chmid {
+      flex: 1;
+    }
+
+    .collegename {
+      font-family: "Liberation Sans", Arial, sans-serif;
+      font-weight: 800;
+      font-size: 44px;
+      color: var(--navy);
+      letter-spacing: .5px;
+      line-height: 1.15;
+    }
+
+    .autoinst {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-family: "Liberation Sans", Arial, sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 4px 16px;
+      margin: 8px 0 10px;
+      letter-spacing: .5px;
+      border-radius: 2px;
+    }
+
+    .affil {
+      font-size: 15px;
+      color: var(--navy);
+      line-height: 1.5;
+    }
+
+    .affil .italic {
+      font-style: italic;
+    }
+
+    .deptline {
+      margin-top: 16px;
+      border-top: 2px solid var(--navy);
+      padding-top: 12px;
+      font-family: "Liberation Sans", Arial, sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      color: var(--navy);
+      letter-spacing: .3px;
+    }
+
+    .through {
+      font-style: italic;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--navy);
+      margin-top: 4px;
+    }
+
+    .mast {
+      font-family: Georgia, "Liberation Serif", serif;
+      font-weight: 700;
+      font-size: 58px;
+      text-align: center;
+      color: var(--navy);
+      text-shadow: 2px 2px 0 #e3b9b4;
+      letter-spacing: -1px;
+      padding: 4px 0 2px;
+    }
+
+    .body-inner {
+      padding: 0 34px;
+    }
+
+    .sub {
+      border-top: 4px double var(--red);
+      border-bottom: 2px solid var(--navy);
+      padding: 6px 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 15px;
+      margin-bottom: 22px;
+      color: var(--navy);
+      gap: 8px;
+    }
+
+    .sub b {
+      font-weight: 700;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      align-items: start;
+    }
+
+    .story {
+      padding: 0 20px;
+      border-right: 1px solid #c8c2ac;
+    }
+
+    .story:first-child {
+      padding-left: 0;
+    }
+
+    .story.last {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .section {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      font-family: "Liberation Sans", sans-serif;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--c);
+      padding: 3px 8px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-family: Georgia, "Liberation Serif", serif;
+      font-weight: 700;
+      font-size: 25px;
+      line-height: 1.15;
+      margin-bottom: 6px;
+      letter-spacing: -.3px;
+      color: var(--navy);
+    }
+
+    .by {
+      font-size: 13px;
+      font-style: italic;
+      margin-bottom: 8px;
+      border-top: 2px solid var(--c);
+      border-bottom: 1px solid var(--c);
+      padding: 2px 0;
+      color: var(--c);
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.42;
+      text-align: justify;
+      hyphens: auto;
+      margin-bottom: 8px;
+    }
+
+    .learn {
+      border: 2px solid var(--c);
+      padding: 10px 12px 4px;
+      margin: 10px 0 6px;
+      background: color-mix(in srgb, var(--c) 10%, var(--paper));
+    }
+
+    .learn .t {
+      font-family: "Liberation Sans", sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      border-bottom: 1px solid var(--c);
+      margin-bottom: 6px;
+      padding-bottom: 2px;
+      color: var(--c);
+    }
+
+    .learn p {
+      font-size: 15px;
+      margin-bottom: 6px;
+      text-align: left;
+    }
+
+    .fig {
+      margin: 8px 0 10px;
+      border: 2px solid var(--c);
+      background: #e3ded0;
+    }
+
+    .fig .frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .fig img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .fig figcaption {
+      font-size: 12px;
+      font-style: italic;
+      padding: 3px 6px;
+      border-top: 1px solid var(--c);
+      background: color-mix(in srgb, var(--c) 8%, var(--paper));
+    }
+
+    .gloss dl {
+      font-size: 13.5px;
+      line-height: 1.28;
+    }
+
+    .gloss dt {
+      font-weight: 700;
+      font-family: "Liberation Sans", sans-serif;
+      font-size: 13px;
+      margin-top: 4px;
+      color: var(--c);
+    }
+
+    .gloss dd {
+      text-align: justify;
+    }
+
+    .puzzle-card {
+      border: 2px solid var(--puz-c, #14284b);
+      background: color-mix(in srgb, var(--puz-c, #14284b) 7%, var(--paper));
+      padding: 8px 9px;
+      margin-top: 10px;
+    }
+
+    .puzzle-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1.5px solid var(--puz-c, #14284b);
+      padding-bottom: 3px;
+      margin-bottom: 5px;
+    }
+
+    .puzzle-title {
+      font-family: "Liberation Sans", Arial, sans-serif;
+      font-weight: 800;
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: .4px;
+      color: var(--puz-c, #14284b);
+    }
+
+    .puzzle-badge {
+      font-family: "Liberation Sans", sans-serif;
+      font-weight: 700;
+      font-size: 9.5px;
+      text-transform: uppercase;
+      background: var(--puz-c, #14284b);
+      color: #fff;
+      padding: 1px 5px;
+      border-radius: 2px;
+    }
+
+    .puzzle-frame {
+      position: relative;
+      width: 100%;
+      min-height: 120px;
+      aspect-ratio: 340 / 115;
+      border: 2px dashed var(--puz-c, #14284b);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 6px 0;
+      padding: 12px;
+      cursor: pointer;
+      box-sizing: border-box;
+      background: #fdfcf9;
+    }
+
+    .puzzle-frame.tall {
+      min-height: 145px;
+      aspect-ratio: 340 / 145;
+    }
+
+    .puzzle-frame img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #fdfcf9;
+    }
+
+    .puzzle-desc {
+      font-size: 12px;
+      line-height: 1.32;
+      font-family: "Liberation Sans", Arial, sans-serif;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      text-align: left;
+    }
+
+    .puzzle-desc b {
+      color: var(--navy);
+    }
+
+    .puzzle-solution-box {
+      background: #e5dfcc;
+      border: 1px dashed #7a735a;
+      padding: 4px 6px;
+      margin-top: 4px;
+    }
+
+    .puzzle-solution-head {
+      font-size: 9px;
+      font-family: "Liberation Sans", sans-serif;
+      font-weight: 800;
+      letter-spacing: .4px;
+      text-transform: uppercase;
+      color: #5c5643;
+      margin-bottom: 2px;
+    }
+
+    .puzzle-solution-content {
+      transform: rotate(180deg);
+      direction: rtl;
+      text-align: left;
+      font-family: Georgia, serif;
+      font-size: 10.5px;
+      line-height: 1.25;
+      color: #1c1a17;
+    }
+
+    .next-week-card {
+      background: #faebd7;
+      border: 1.5px solid #b3261e;
+      padding: 5px 7px;
+      margin-top: 4px;
+    }
+
+    .next-week-head {
+      font-family: "Liberation Sans", sans-serif;
+      font-weight: 800;
+      font-size: 10.5px;
+      color: #b3261e;
+      letter-spacing: .3px;
+      margin-bottom: 2px;
+    }
+
+    .foot {
+      margin-top: 16px;
+      border-top: 1px solid var(--navy);
+      padding-top: 6px;
+      font-size: 13px;
+      font-style: italic;
+      text-align: center;
+      color: var(--navy);
+    }
+
+    .page-footer {
+      margin-top: 14px;
+      border-top: 2px solid var(--navy);
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "Liberation Sans", Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .6px;
+      color: var(--navy);
+      text-transform: uppercase;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .page-btn-link {
+      color: var(--red);
+      text-decoration: none;
+      font-weight: 800;
+      padding: 6px 14px;
+      border: 1.5px solid var(--red);
+      border-radius: 4px;
+      background: color-mix(in srgb, var(--red) 10%, #fff);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .page-btn-link:hover {
+      background: var(--red);
+      color: #fff;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1200px) {
+      body {
+        padding: 18px 24px 30px;
+      }
+      .collegename {
+        font-size: 32px;
+      }
+      .logo-slot {
+        width: 110px;
+        height: 110px;
+        flex: 0 0 110px;
+      }
+      .mast {
+        font-size: 46px;
+      }
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .story {
+        padding: 0;
+        border-right: none;
+        border-bottom: 1px solid #c8c2ac;
+        padding-bottom: 16px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10px 10px 24px;
+      }
+      .paper {
+        box-shadow: 0 0 0 3px #dfd8c2, 0 0 0 5px var(--navy);
+        padding: 0 0 16px;
+      }
+      .collegehead {
+        padding: 14px 10px 8px;
+      }
+      .chrow {
+        gap: 8px;
+      }
+      .logo-slot {
+        width: 60px;
+        height: 60px;
+        flex: 0 0 60px;
+      }
+      .collegename {
+        font-size: 18px;
+        line-height: 1.15;
+      }
+      .autoinst {
+        font-size: 11px;
+        padding: 2px 8px;
+      }
+      .affil {
+        font-size: 10.5px;
+      }
+      .deptline {
+        font-size: 13px;
+        margin-top: 10px;
+        padding-top: 8px;
+      }
+      .mast {
+        font-size: 32px;
+      }
+      .body-inner {
+        padding: 0 12px;
+      }
+      .sub {
+        flex-direction: column;
+        text-align: center;
+        gap: 4px;
+        font-size: 12px;
+      }
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .story {
+        padding: 16px 0;
+        border-right: none;
+        border-bottom: 1.5px solid #c8c2ac;
+      }
+      h2 {
+        font-size: 21px;
+      }
+      p {
+        font-size: 15px;
+        text-align: left;
+      }
+      .gloss dd {
+        text-align: left;
+      }
+      .page-footer {
+        flex-direction: column;
+        text-align: center;
+      }
+      .page-btn-link {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media print {
+      body {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .paper {
+        box-shadow: none !important;
+        border: 3px double var(--navy) !important;
+      }
+      .grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="paper">
+    <div class="collegehead">
+      <!-- College Banner matching the supplied image (Present on the second page) -->
+      <div class="chrow">
+        <div class="logo-slot badge">
+          <img src="images/panimalarlogo.png" alt="Panimalar Engineering College Logo">
+        </div>
+        <div class="chmid">
+          <div class="collegename">PANIMALAR ENGINEERING COLLEGE</div>
+          <div class="autoinst">An Autonomous Institution</div>
+          <div class="affil">
+            Affiliated to AICTE, New Delhi, Accredited by National Board of Accreditation (NBA)<br>
+            Affiliated to Anna University, Chennai<br>
+            <span class="italic">(JAISAKTHI EDUCATIONAL TRUST)</span><br>
+            <span class="italic">Bangalore Trunk Road, Varadharajapuram, Poonamallee, Chennai &ndash; 600 123.</span>
+          </div>
+        </div>
+        <div class="logo-slot">
+          <img src="images/26.png" alt="26 Years of Excellence">
+        </div>
+      </div>
+
+      <div class="deptline">DEPARTMENT OF ELECTRONICS AND COMMUNICATION ENGINEERING</div>
+      <div class="through">ROBOBOUT CLUB PRESENTS</div>
+      <div class="mast">The Gear Gazette </div>
+    </div>
+
+    <div class="body-inner">
+      <div class="sub">
+        <span><b>Saturday, September 26, 2026</b></span>
+        <span><b>Issue 01 (Page 2 of 2)</b></span>
+      </div>
+
+      <div class="grid">
+        <!-- STORY 4 -->
+        <div class="story" style="--c:#7a3b8f">
+          <div class="section">Physical AI &amp; Security</div>
+          <h2>A Quadruped Robot Can Now Badge Through Locked Doors on Its Own</h2>
+          <div class="by">Sept. 24, 2026 &middot; ANYbotics, dormakaba &amp; LEGIC</div>
+          <figure class="fig">
+            <div class="frame"><img src="images/4.png" alt="ANYmal quadruped robot at Whitegate plant"></div>
+            <figcaption>Photo: ANYmal quadruped inspection robot approaching a plant door.</figcaption>
+          </figure>
+          <p>ANYbotics, dormakaba and LEGIC Identsystems have completed a pilot letting the four-legged ANYmal
+            inspection robot open access-controlled doors by itself, carrying a secure digital credential the same way
+            an employee's ID badge works. The pilot ran for several weeks at GE Vernova's Whitegate power plant in
+            Ireland.</p>
+          <p>Until now, a locked door was often the one obstacle stopping an inspection robot from reaching hazardous or
+            restricted areas. The partners are now preparing a commercial rollout and looking at extending the same idea
+            to elevators and turnstiles.</p>
+          <div class="learn">
+            <div class="t">Learn: what is a secure digital credential?</div>
+            <p>It is the electronic equivalent of a badge, an encrypted code a reader can check without letting anyone
+              copy or fake it. Giving a robot its own credential, instead of just detecting its presence, means a
+              facility's existing security system can log exactly when and where the robot went, the same audit trail it
+              already keeps for people.</p>
+          </div>
+        </div>
+
+        <!-- STORY 5 -->
+        <div class="story" style="--c:#c47a00">
+          <div class="section">Electronics &amp; Photonics</div>
+          <h2>Morphotonics Raises &euro;40M+ to Scale Optics for AI Glasses and Data Centers</h2>
+          <div class="by">Sept. 21&ndash;22, 2026 &middot; Veldhoven, Netherlands</div>
+          <figure class="fig">
+            <div class="frame"><img src="images/5.jpg"
+                alt="Nanoimprint lithography for AR waveguides and co-packaged optics"></div>
+            <figcaption>Photo: Nanoimprint lithography for AR waveguides and co-packaged optics.</figcaption>
+          </figure>
+          <p>Dutch company Morphotonics closed a Series B round of more than &euro;40 million to scale up its
+            nanoimprint lithography machines, which stamp optical patterns onto materials instead of using light to etch
+            them the way chipmaking lithography does. Its main product today is waveguides, the transparent parts inside
+            AR and smart glasses that steer a digital image into the wearer's eye.</p>
+          <p>The new funding will also push Morphotonics into co-packaged optics, components that move data as light
+            between chips inside an AI data center, which need far less power than moving the same data as electrical
+            signals.</p>
+          <div class="learn">
+            <div class="t">Learn: nanoimprint vs. photolithography</div>
+            <p>Chip fabs use light through a mask to draw circuits (photolithography). <b>Nanoimprint lithography</b>
+              instead presses a physical stamp into a soft material, like using a mould. It cannot draw features as
+              small as the most advanced chips need, but it is fast and cheap over large areas, which suits optical
+              components like waveguides and data-center light-links.</p>
+          </div>
+        </div>
+
+        <!-- STORY 6 -->
+        <div class="story" style="--c:#0f7c86">
+          <div class="section">Semiconductor Industry</div>
+          <h2>Tim Cook Wins the Chip Industry's Highest Honor, the Noyce Award</h2>
+          <div class="by">Sept. 22, 2026 &middot; Semiconductor Industry Association</div>
+          <figure class="fig">
+            <div class="frame"><img src="images/6.png" alt="Tim Cook named 2026 Robert N. Noyce Award recipient"></div>
+            <figcaption>Photo: Tim Cook named 2026 Robert N. Noyce Award recipient by the SIA.</figcaption>
+          </figure>
+          <p>The Semiconductor Industry Association named Apple Executive Chair Tim Cook as the 2026 recipient of the
+            Robert N. Noyce Award, the industry's top honor, citing his role in advancing U.S. semiconductor
+            manufacturing and design. He will receive it at the SIA Awards Dinner on November 19, 2026, in San Jose.</p>
+          <p>The award is named for Robert Noyce, who co-founded Intel and co-invented the integrated circuit. Cook
+            stepped down as Apple's CEO on September 1, 2026, after fifteen years, and now serves as executive chair.
+          </p>
+          <div class="learn">
+            <div class="t">Learn: who was Robert Noyce, and why does the award matter?</div>
+            <p>Robert Noyce co-invented the <b>integrated circuit</b>, the technology that put many transistors on a
+              single chip and made every modern electronic device possible, then co-founded Intel. The award recognizes
+              leadership that benefits the whole chip industry, not just one company, so its recipients are usually a
+              good shortlist of who is currently shaping how and where chips get designed and made.</p>
+          </div>
+        </div>
+
+        <!-- JARGON BUSTER & PUZZLES -->
+        <div class="story last gloss" style="--c:#3b4a6b">
+          <div class="section">Jargon Buster</div>
+          <div class="learn" style="margin-top:0">
+            <dl>
+              <dt>Depth camera</dt>
+              <dd>A camera that measures distance to objects, not just color and shape.</dd>
+              <dt>ROS</dt>
+              <dd>Robot Operating System: shared tools that let a robot's parts talk to each other.</dd>
+              <dt>MoveIt</dt>
+              <dd>Open-source software that plans safe, collision-free arm movements.</dd>
+              <dt>TOPS</dt>
+              <dd>Trillion operations per second, a measure of AI chip speed.</dd>
+              <dt>Secure credential</dt>
+              <dd>An encrypted digital ID a reader can verify without it being copied.</dd>
+              <dt>Nanoimprint lithography</dt>
+              <dd>Stamping a pattern into material instead of etching it with light.</dd>
+              <dt>Co-packaged optics</dt>
+              <dd>Light-based links placed right next to a chip to move data faster and cooler.</dd>
+              <dt>Integrated circuit</dt>
+              <dd>Many transistors built together on one chip.</dd>
+            </dl>
+          </div>
+
+          <!-- ROBO-PUZZLE 1 (WITH ANSWER) -->
+          <div class="puzzle-card" style="--puz-c:#14284b">
+            <div class="puzzle-header">
+              <span class="puzzle-title">Robo-Puzzle 1: Actuator Gear Train</span>
+              <span class="puzzle-badge">With Solution</span>
+            </div>
+            <div class="puzzle-frame" onclick="this.querySelector('input[type=file]')?.click()" title="Click to upload/preview image">
+              <input type="file" accept="image/*" style="display:none" onchange="const f=this.files[0]; if(f){ const r=new FileReader(); r.onload=e=>{ const img=this.parentElement.querySelector('img'); img.src=e.target.result; }; r.readAsDataURL(f); }">
+              <img src="images/puzzle1.png" alt="Robo-Puzzle 1 Diagram">
+              <div class="placeholder-text">&#128247; [ PLACE PUZZLE 1 IMAGE HERE ]<small>Set &lt;img src="..."&gt; or click to upload</small></div>
+            </div>
+            <div class="puzzle-desc">Motor Gear <b>A (30T)</b> drives idlers <b>B (15T)</b> &amp; <b>C (45T)</b> into
+              Gripper Pinion <b>D (15T)</b> at 120 RPM Clockwise. What is Gear D's <b>direction &amp; output RPM</b>?
+            </div>
+            <div class="puzzle-solution-box">
+              <div class="puzzle-solution-head">&#9660; Solution (upside-down)</div>
+              <div class="puzzle-solution-content">Answer: <b>Counter-Clockwise (CCW) at 240 RPM</b>. (Gears B &amp; C
+                act as idlers, reversing direction twice: A:CW &#10142; B:CCW &#10142; C:CW &#10142; D:CCW. Net gear
+                speed ratio = 30T / 15T = 2.0&times; multiplier: 120 &times; 2 = 240 RPM).</div>
+            </div>
+          </div>
+
+          <!-- ROBO-PUZZLE 2 (ANSWER POSTED NEXT WEEK) -->
+          <div class="puzzle-card" style="--puz-c:#b3261e">
+            <div class="puzzle-header">
+              <span class="puzzle-title">Robo-Puzzle 2: Autonomous Rover Labyrinth</span>
+              <span class="puzzle-badge" style="background:#b3261e">Contest</span>
+            </div>
+            <div class="puzzle-frame tall" onclick="this.querySelector('input[type=file]')?.click()" title="Click to upload/preview image">
+              <input type="file" accept="image/*" style="display:none" onchange="const f=this.files[0]; if(f){ const r=new FileReader(); r.onload=e=>{ const img=this.parentElement.querySelector('img'); img.src=e.target.result; }; r.readAsDataURL(f); }">
+              <img src="images/puzzle2.png" alt="Robo-Puzzle 2 Diagram">
+              <div class="placeholder-text">&#128247; [ PLACE PUZZLE 2 IMAGE HERE ]<small>Set &lt;img src="..."&gt; or click to upload</small></div>
+            </div>
+            <div class="puzzle-desc">
+              <b>Autonomous Reactive Navigation Routine:</b><br>
+              1. If FRONT is clear &#10142; Move 1 step forward.<br>
+              2. Else if RIGHT is clear &#10142; Turn 90&deg; CW &amp; step 1 forward.<br>
+              3. Else &#10142; Turn 90&deg; CCW &amp; step 1 forward.<br>
+              <b>Question:</b> Which docking station (<b>Dock A, B, or C</b>) will the rover safely dock at?
+            </div>
+            <div class="next-week-card">
+              <div class="next-week-head">&#9733; ANSWER WILL BE POSTED NEXT WEEK!</div>
+              <div class="next-week-body"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="foot">Sources: Cognex &amp; RealSense press releases, The Robot Report, Robotics 24/7,
+        RoboticsTomorrow, NVIDIA Blog, dormakaba Group, Morphotonics, TechCrunch, Semiconductor Industry Association.
+        All six stories fall between September 19 and September 25, 2026, and each was cross-checked against at least
+        two independent sources before inclusion.</div>
+
+      <div class="page-footer">
+        <span>PANIMALAR ENGINEERING COLLEGE &mdash; DEPARTMENT OF ECE</span>
+        <span>THE GEAR GAZETTE &bull; ISSUE 01</span>
+        <span>PAGE 2 OF 2 &mdash; <a href="page1.html" class="page-btn-link">&larr; BACK TO PAGE 1</a></span>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
